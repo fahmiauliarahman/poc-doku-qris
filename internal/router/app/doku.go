@@ -4,7 +4,7 @@ package app
 
 import (
 	"github.com/cloudwego/hertz/pkg/app/server"
-	app "github.com/fahmiauliarahman/poc-doku-qris/biz/handler/app"
+	app "github.com/fahmiauliarahman/poc-doku-qris/internal/handler/app"
 )
 
 /*

@@ -7,15 +7,14 @@ import (
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
-	model "github.com/fahmiauliarahman/poc-doku-qris/biz/model/app"
+	types "github.com/fahmiauliarahman/poc-doku-qris/internal/types/app"
 )
 
 // GenerateQris .
 // @router v1/qris/generate [POST]
 func GenerateQris(ctx context.Context, c *app.RequestContext) {
-	resp := new(model.GenerateQrisResponse)
 
-	c.JSON(consts.StatusNotFound, nil)
+	resp := new(types.GenerateQrisResponse)
 
 	c.JSON(consts.StatusOK, resp)
 }
@@ -23,7 +22,8 @@ func GenerateQris(ctx context.Context, c *app.RequestContext) {
 // QueryQris .
 // @router v1/qris/query [POST]
 func QueryQris(ctx context.Context, c *app.RequestContext) {
-	resp := new(model.QueryQrisResponse)
+
+	resp := new(types.QueryQrisResponse)
 
 	c.JSON(consts.StatusOK, resp)
 }
@@ -31,7 +31,8 @@ func QueryQris(ctx context.Context, c *app.RequestContext) {
 // RefundQris .
 // @router v1/qris/refund [POST]
 func RefundQris(ctx context.Context, c *app.RequestContext) {
-	resp := new(model.RefundQrisResponse)
+
+	resp := new(types.RefundQrisResponse)
 
 	c.JSON(consts.StatusOK, resp)
 }
@@ -39,7 +40,8 @@ func RefundQris(ctx context.Context, c *app.RequestContext) {
 // DecodeQris .
 // @router v1/qris/decode [POST]
 func DecodeQris(ctx context.Context, c *app.RequestContext) {
-	resp := new(model.DecodeQrisResponse)
+
+	resp := new(types.DecodeQrisResponse)
 
 	c.JSON(consts.StatusOK, resp)
 }
@@ -47,7 +49,8 @@ func DecodeQris(ctx context.Context, c *app.RequestContext) {
 // PaymentQris .
 // @router v1/qris/payment [POST]
 func PaymentQris(ctx context.Context, c *app.RequestContext) {
-	resp := new(model.PaymentQrisResponse)
+
+	resp := new(types.PaymentQrisResponse)
 
 	c.JSON(consts.StatusOK, resp)
 }

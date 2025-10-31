@@ -7,6 +7,9 @@ replace github.com/apache/thrift => github.com/apache/thrift v0.13.0
 require (
 	github.com/apache/thrift v0.22.0
 	github.com/cloudwego/hertz v0.10.3
+	github.com/hertz-contrib/logger/slog v1.0.0
+	github.com/joho/godotenv v1.5.1
+	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 )
 
 require (

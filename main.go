@@ -4,13 +4,32 @@ package main
 
 import (
 	"context"
+	"os"
 	"time"
 
 	"github.com/cloudwego/hertz/pkg/app/server"
+	"github.com/cloudwego/hertz/pkg/common/hlog"
+	"github.com/fahmiauliarahman/poc-doku-qris/internal/pkg"
+	_ "github.com/joho/godotenv/autoload"
 )
 
 func main() {
-	h := server.Default(server.WithExitWaitTime(3 * time.Second))
+	port := os.Getenv("APP_PORT")
+	if port == "" {
+		panic("APP_PORT is not set on .env file")
+	}
+
+	h := server.Default(
+		server.WithHostPorts(":"+port),
+		server.WithExitWaitTime(3*time.Second),
+	)
+
+	logger, err := pkg.NewLogger()
+	if err != nil {
+		panic("failed to initialize logger: " + err.Error())
+	}
+
+	hlog.SetLogger(logger)
 
 	// add graceful shutdown
 	h.OnShutdown = append(h.OnShutdown, func(ctx context.Context) {
