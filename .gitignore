@@ -1,0 +1,6 @@
+.env
+tmp
+.vscode
+.DS_Store
+.trae
+.idea
