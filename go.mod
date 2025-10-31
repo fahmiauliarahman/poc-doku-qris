@@ -2,7 +2,12 @@ module github.com/fahmiauliarahman/poc-doku-qris
 
 go 1.25.3
 
-require github.com/cloudwego/hertz v0.10.3
+replace github.com/apache/thrift => github.com/apache/thrift v0.13.0
+
+require (
+	github.com/apache/thrift v0.22.0
+	github.com/cloudwego/hertz v0.10.3
+)
 
 require (
 	github.com/bytedance/gopkg v0.1.1 // indirect
